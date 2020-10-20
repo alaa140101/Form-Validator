@@ -13,27 +13,35 @@
         <form method="get">
             <div class="form-group">
                 <label for="name">Full Name:</label>
-                <input type="text" name="name" id="name" placeholder="Your Full Name">
+                <input type="text" name="name" id="name" placeholder="Your Full Name"
+                required minlength="3" maxlength="50">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email" placeholder="test@gmail.com">
+                <input type="email" name="email" id="email" placeholder="test@gmail.com"
+                required  >
             </div>
             <div class="form-group">
                 <label for="website">Website URL:</label>
-                <input type="url" name="website" id="website" placeholder="Yahoo.com">
+                <input type="url" name="website" id="website" placeholder="Yahoo.com"
+                required  >
             </div>
             <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="tel" name="phone" id="phone" placeholder="333-4444-5555">
+                <input type="tel" name="phone" id="phone" placeholder="333-333-7777777"
+                required pattern="[0-9]{3}-[0-9]{3}-[0-9]{7}">
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password" placeholder="*******">
+                <input type="password" name="password" id="password" placeholder="*******"
+                required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                    title="Please enter 8 characters, and incloude 1 at least small, 1 at least capetial & 1 at least number">
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="*******">
+                <input type="password" name="confirm-password" id="confirm-password" placeholder="*******"
+                required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                    title="Confirmed password should match your password">
             </div>
             <div class="form-group">
                 <button type="submit">Register</button>
