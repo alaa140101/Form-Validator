@@ -7,14 +7,18 @@ const message = document.getElementById('message');
 let isValid = false;
 let passwordsMatch = false;
 
+function messageView(msg, color) {
+  message.textContent = msg;
+  message.style.color = color;
+  messageContainer.style.borderColor = color;
+}
+
 function validateForm() {
   // Using Contraint API
   isValid = form.checkValidity();
   // Style main message for an error
   if(!isValid) {
-    message.textContent = 'Please fill out all fields.';
-    message.style.color = "red";
-    messageContainer.style.borderColor = "red";
+    messageView('Please fill out all fields.','red');
     return;
   }
   // Check to see if passwords match
@@ -24,18 +28,14 @@ function validateForm() {
     confirmPasswordEl.style.borderColor = 'green';
   }else{
     passwordsMatch = false;
-    message.textContent = 'Make sure passwords match.';
-    message.style.color = "red";
-    messageContainer.style.borderColor = "red";
+    messageView('Make sure passwords match.','red');
     passwordEl.style.borderColor = 'red';
     confirmPasswordEl.style.borderColor = 'red';
     return;
   }
   // If form is valid and passwords match
   if (isValid && passwordsMatch) {
-    message.textContent = 'Successfully Registered!';
-    message.style.color = "green";
-    messageContainer.style.borderColor = "green";
+    messageView('Successfully Registered!','green');
   }
 }
 
